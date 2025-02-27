@@ -10,5 +10,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{ vars.USERNAME }}
     steps:
-      - run: echo "${{ inputs.greeting }}"
+      - run: echo "${USERNAME}"
