@@ -12,5 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       USERNAME: ${{ vars.USERNAME }}
+      SAMPLE: ${{ vars.SAMPLE }}
     steps:
       - run: echo "${USERNAME}"
+      - run: echo "${SAMPLE}"
