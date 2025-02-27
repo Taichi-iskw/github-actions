@@ -13,8 +13,8 @@ jobs:
     env:
       USERNAME: ${{ vars.USERNAME }}
       SAMPLE: ${{ vars.SAMPLE }}
-      OBJ: ${{ vars.JSON_SAMPLE }}
-      JSON: ${{ vars.OBJ_SAMPLE }}
+      JSON: ${{ vars.JSON_SAMPLE }}
+      OBJ: ${{ vars.OBJ_SAMPLE }}
     steps:
-      - run: echo "${OBJ}"
-      - run: echo "${JSON}"
+      - run: echo "${{toJson('${JSON}')}}"
+      - run: echo "${{fromJson('${OBJ}')}}"
