@@ -10,9 +10,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    env:
-      JSON: ${{ fromJson(vars.JSON_SAMPLE) }}
-      OBJ: ${{ toJson(vars.OBJ_SAMPLE)}}
     steps:
-      - run: echo "${JSON}"
-      - run: echo "${OBJ}"
+      - run: exit 0
+      - run: echo "hello"
+        if: ${{failure()}}
