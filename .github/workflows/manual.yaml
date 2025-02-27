@@ -1,4 +1,5 @@
 name: Manual
+run-name: Run by @${{github.actor}}
 on:
   workflow_dispatch:
     inputs:
@@ -10,7 +11,12 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
     steps:
-      - run: exit 0
-      - run: echo "hello"
-        if: ${{failure()}}
+      - uses: actions/checkout@v4
+      - name: PR
+        run: gh pr comment "${GITHUB_HEAD_REF}" --body "Hello, ${GITHUB_ACTOR}"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
