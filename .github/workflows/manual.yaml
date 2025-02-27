@@ -11,10 +11,8 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
-      USERNAME: ${{ vars.USERNAME }}
-      SAMPLE: ${{ vars.SAMPLE }}
-      JSON: ${{ vars.JSON_SAMPLE }}
-      OBJ: ${{ vars.OBJ_SAMPLE }}
+      JSON: ${{ fromJson(vars.JSON_SAMPLE) }}
+      OBJ: ${{ toJson(vars.OBJ_SAMPLE)}}
     steps:
-      - run: echo "${{toJson('${JSON}')}}"
-      - run: echo "${{fromJson('${OBJ}')}}"
+      - run: echo "${JSON}"
+      - run: echo "${OBJ}"
