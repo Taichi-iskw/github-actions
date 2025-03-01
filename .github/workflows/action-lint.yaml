@@ -11,6 +11,7 @@ defaults:
 env:
   WORK_FLOW: ${{ github.workflow }}
   REF: ${{ github.ref }}
+  VERSION: ${{ github.ref_name }}
 
 concurrency:
   group: ${WORK_FLOW}-${REF}
@@ -18,6 +19,8 @@ concurrency:
 
 jobs:
   sample:
+    strategy:
+      fail-fast: true
     runs-on: ubuntu-latest
     steps:
-      - run:
+      - run: echo $VERSION
