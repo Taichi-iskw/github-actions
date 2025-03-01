@@ -7,9 +7,12 @@ on:
 defaults:
   run:
     shell: bash
+env:
+  WORK_FLOW: ${{ github.workflow }}
+  REF: ${{ github.ref }}
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${WORK_FLOW}-${REF}
 
 jobs:
   lint:
@@ -18,4 +21,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          echo hello
+          echo '${WORK_FLOW}-${REF}'
