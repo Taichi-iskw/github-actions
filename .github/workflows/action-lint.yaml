@@ -27,6 +27,5 @@ jobs:
           echo $WORK_FLOW
           echo $REF
           sleep 10
-          echo ${{ github.workflow }}
-          echo ${{ github.ref }}
           echo "::endgroup::"
+          echo ::error::test error
