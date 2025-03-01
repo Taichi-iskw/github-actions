@@ -6,7 +6,7 @@ on:
 
 defaults:
   run:
-    shell: bash
+    shell: bash -euxo pipefail {0}
 env:
   WORK_FLOW: ${{ github.workflow }}
   REF: ${{ github.ref }}
@@ -22,7 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
+          echo "::group::Sample Log Group"
           echo $WORK_FLOW
           echo $REF
           echo ${{ github.workflow }}
           echo ${{ github.ref }}
+          echo "::endgroup::"
