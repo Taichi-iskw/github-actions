@@ -13,6 +13,7 @@ env:
 
 concurrency:
   group: ${WORK_FLOW}-${REF}
+  cancel-in-progress: true
 
 jobs:
   sample:
@@ -25,3 +26,4 @@ jobs:
           echo $REF
           echo ${{ github.workflow }}
           echo ${{ github.ref }}
+          sleep 120
