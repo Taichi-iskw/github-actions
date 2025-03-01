@@ -20,9 +20,39 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  sample:
+  first:
     strategy:
       fail-fast: true
     runs-on: ubuntu-latest
     steps:
       - run: echo $VERSION
+
+  second:
+    needs: [first]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo 1
+          sleep 10
+          echo 2
+
+  third:
+    needs: [first]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo a
+          sleep 10
+          echo b
+
+  fourth:
+    needs: [second, third]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo last
+
+  fifth:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo flying
