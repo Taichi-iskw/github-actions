@@ -22,5 +22,5 @@ jobs:
     timeout-minutes: 5
     steps:
       - run: |
-          echo "# Summary" >> "${GITHUB_STEp_SUMMARY}"
-          echo "- [ ] hey" >> "${GITHUB_STEp_SUMMARY}"
+          echo "# Summary" >> "${GITHUB_STEP_SUMMARY}"
+          echo "- [ ] hey" >> "${GITHUB_STEP_SUMMARY}"
