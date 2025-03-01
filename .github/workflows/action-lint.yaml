@@ -15,10 +15,13 @@ concurrency:
   group: ${WORK_FLOW}-${REF}
 
 jobs:
-  lint:
+  sample:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - run: |
-          echo '${WORK_FLOW}-${REF}'
+          echo $WORK_FLOW
+          echo $REF
+          echo ${{ github.workflow }}
+          echo ${{ github.ref }}
