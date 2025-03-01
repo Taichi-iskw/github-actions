@@ -11,5 +11,5 @@ func EvenOrOdd(n int) string {
 }
 
 func main() {
-	fmt.Println(EvenOrOdd(10)) // "even"
+	fmt.Println(EvenOrOdd(12)) // "even"
 }
