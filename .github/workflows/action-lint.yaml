@@ -19,8 +19,5 @@ concurrency:
 jobs:
   sample:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
     steps:
-      - run: |
-          echo "# Summary" >> "${GITHUB_STEP_SUMMARY}"
-          echo "- [ ] hey" >> "${GITHUB_STEP_SUMMARY}"
+      - run:
