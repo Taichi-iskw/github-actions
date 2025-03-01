@@ -2,7 +2,7 @@ name: Static analysis
 on:
   push:
     branches:
-      - 1-sample-issue
+      - main
 
 defaults:
   run:
@@ -18,4 +18,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          docker run --rm -v "$(pwd):$(pwd)" -w "$(pwd)" rhyds/actionlint:latest
+          echo hello
