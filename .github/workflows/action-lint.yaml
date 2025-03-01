@@ -26,4 +26,3 @@ jobs:
           echo $REF
           echo ${{ github.workflow }}
           echo ${{ github.ref }}
-          sleep 60
