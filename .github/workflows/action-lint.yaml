@@ -12,6 +12,6 @@ env:
 jobs:
   first:
     runs-on: ubuntu-latest
-    timeout-minutes: 30 # 30分でタイムアウト. Default 360min
+    timeout-minutes: 30 # 30分でタイムアウト. Default 360分
     steps:
       - run: echo $ENVIRONMENT
