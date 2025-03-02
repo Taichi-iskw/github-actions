@@ -1,4 +1,5 @@
-name: Default Action
+name: Sample-Action
+run-name: run-name
 on:
   push:
     branches:
