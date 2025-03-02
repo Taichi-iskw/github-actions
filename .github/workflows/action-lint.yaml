@@ -5,11 +5,11 @@ defaults:
   run:
     shell: bash # Errorを拾いやすくなる
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref_name }} # workflowName-branchName
+  group: ${{ github.workflow_ref }}
   cancel-in-progress: true # 同じbranchのworkflowが動いていたら、キャンセル
 jobs:
   first:
     runs-on: ubuntu-latest
     timeout-minutes: 30 # 30分でタイムアウト. Default 360min
     steps:
-      - run: echo ${{ github.workflow }}-${{ github.ref_name }}
+      - run: echo ${{github.workflow_ref}}
