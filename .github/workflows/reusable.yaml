@@ -1,11 +1,13 @@
-name: Reusable Workflow
-
+name: Called Workflow
 on:
   workflow_call:
 
 jobs:
-  example_job:
+  simple-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Run a script
-        run: echo "Hello, this is a reusable workflow!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print message
+        run: echo "This is the called workflow!"
