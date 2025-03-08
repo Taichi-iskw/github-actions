@@ -4,5 +4,8 @@ jobs:
   call_reusable_workflow:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
       - name: Call the reusable workflow
         uses: ./.github/workflows/reusable.yaml
