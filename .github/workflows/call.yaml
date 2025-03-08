@@ -1,3 +1,4 @@
+name: Call Reusable Workflow
 on:
   workflow_dispatch:
 jobs:
@@ -6,6 +7,9 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
+
+      - name: check the repository
+        run: ls -la
 
       - name: Call the reusable workflow
         uses: ./.github/workflows/reusable.yaml
