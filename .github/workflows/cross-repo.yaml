@@ -1,7 +1,7 @@
 name: cross repo
 on: push
 env:
-  TARGET_REPO: Taichi-iskw/repo-test
+  TARGET_REPO: repo-test
 jobs:
   checkout:
     runs-on: ubuntu-latest
@@ -9,8 +9,8 @@ jobs:
       - id: create
         uses: actions/create-github-app-token@v1
         with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.PRIVATE_KEY }}
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
           repositories: ${{ env.TARGET_REPO }}
       - uses: actions/checkout@v4
         with:
