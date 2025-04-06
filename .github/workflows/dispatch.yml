@@ -1,13 +1,19 @@
-name: Example using Self-Hosted Runner
+name: Docker Build Check
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: # 手動実行
 
 jobs:
-  build:
-    runs-on: [self-hosted]
+  docker-build-check:
+    runs-on: self-hosted
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Run a script
-        run: echo "Hello from self-hosted runner!"
+      - name: Create Simple Dockerfile
+        run: |
+          echo 'FROM alpine' > Dockerfile
+          echo 'CMD ["echo", "Hello from Docker!"]' >> Dockerfile
+
+      - name: Build Docker Image
+        run: docker build -t test-image .
+
+      - name: Run Docker Image
+        run: docker run --rm test-image
