@@ -5,7 +5,7 @@ on:
 
 jobs:
   docker-build-check:
-    runs-on: self-hosted
+    runs-on: sample
     steps:
       - name: hello
         run: echo 'hello'
