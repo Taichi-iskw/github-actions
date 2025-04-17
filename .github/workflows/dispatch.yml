@@ -9,13 +9,13 @@ jobs:
     steps:
       - name: hello
         run: echo 'hello'
-      - name: Create Simple Dockerfile
-        run: |
-          echo 'FROM alpine' > Dockerfile
-          echo 'CMD ["echo", "Hello from Docker!"]' >> Dockerfile
+      # - name: Create Simple Dockerfile
+      #   run: |
+      #     echo 'FROM alpine' > Dockerfile
+      #     echo 'CMD ["echo", "Hello from Docker!"]' >> Dockerfile
 
-      - name: Build Docker Image
-        run: docker build -t test-image .
+      # - name: Build Docker Image
+      #   run: docker build -t test-image .
 
-      - name: Run Docker Image
-        run: docker run --rm test-image
+      # - name: Run Docker Image
+      #   run: docker run --rm test-image
