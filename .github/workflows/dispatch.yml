@@ -5,10 +5,12 @@ on:
 
 jobs:
   docker-build-check:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: hello
         run: echo 'hello'
+      - name: sleep
+        run: sleep 15
       # - name: Create Simple Dockerfile
       #   run: |
       #     echo 'FROM alpine' > Dockerfile
