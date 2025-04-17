@@ -5,7 +5,7 @@ on:
 
 jobs:
   docker-build-check:
-    runs-on: happy
+    runs-on: ubuntu
     steps:
       - name: hello
         run: echo 'hello'
